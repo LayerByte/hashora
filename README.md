@@ -1,140 +1,92 @@
-# hashora
+# Hashora
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Hashing](https://img.shields.io/badge/Hashing-MD5%20%7C%20SHA1%20%7C%20SHA256%20%7C%20SHA512-0A66C2?style=for-the-badge)
-![Integrity](https://img.shields.io/badge/File-Integrity-2EA44F?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-
-**hashora** is a small Python file hash checker for educational integrity verification. It calculates cryptographic hashes for a selected file and can compare the result with an expected hash value.
+File hashing and integrity comparison utility.
 
 School Purpose Only.
 
-## 🧭 Overview
+## Overview
 
-hashora helps users verify whether a file is unchanged by calculating its hash. A hash is a fixed-length fingerprint created from file contents. If even one byte in the file changes, the resulting hash should change too.
+Hashora is a focused educational cybersecurity utility built with Python. It is designed for defensive learning, local analysis, and authorized administration tasks. The project keeps the workflow simple, readable, and practical so students can understand how the tool works without digging through unnecessary framework code.
 
-This project is intended for learning how file integrity checks work with Python's built-in `hashlib` module. It does not require any external packages.
+## Features
 
-## ✨ Features
+- Clean project layout with a focused purpose
+- Defensive, read-only analysis where applicable
+- Input validation with clear user feedback
+- Graceful error handling for common mistakes
+- Copy-friendly terminal or application output
+- MIT licensed for simple educational reuse
 
-| Feature | Description |
-| --- | --- |
-| 📁 File selection | Enter a local file path from the terminal |
-| 📏 File size | Displays readable size and exact byte count |
-| 🔐 Multiple hashes | Supports MD5, SHA1, SHA256, and SHA512 |
-| ✅ Hash comparison | Compares a calculated hash with an expected value |
-| 🧯 Error handling | Handles missing files, permission issues, and interruptions |
-| 🧑‍🏫 Beginner-friendly code | Uses reusable functions and short comments |
-| 📦 No dependencies | Uses only Python's standard library |
+## Supported Operations
 
-## 🔐 Supported Algorithms
+- Validate user-provided input before processing
+- Analyze local files, text, logs, network metadata, or configuration data depending on the project goal
+- Print or display structured results in a beginner-readable format
+- Avoid destructive actions, credential collection, exploitation, brute forcing, or malware behavior
 
-| Algorithm | Common Use |
-| --- | --- |
-| MD5 | Legacy checksums and basic file identification |
-| SHA1 | Legacy integrity checks |
-| SHA256 | Modern file integrity verification |
-| SHA512 | Stronger SHA-2 family hashing with longer output |
+## Requirements
 
-MD5 and SHA1 are included for educational and compatibility purposes. For modern integrity verification, SHA256 or SHA512 is usually preferred.
+- Python 3.12 or newer
+- Standard library only
 
-## 🧰 Requirements
+## Installation
 
-- Python 3.9 or newer
-- A terminal or command prompt
-- A readable local file to check
-- No third-party Python packages
-
-## 🚀 Installation
-
-Clone the repository:
+Clone the repository, open the project folder, and install or build with the standard toolchain:
 
 ```bash
-git clone https://github.com/LayerByte/hashora.git
-cd hashora
+python --version
 ```
 
-Or download the project files and open a terminal inside the `hashora` folder.
+## Usage
 
-## ▶️ Usage
-
-Run the application:
+Run the project from the repository root:
 
 ```bash
-python main.py
+python main.py --help
 ```
 
-On Windows, if `python` is not available, try:
-
-```bash
-py main.py
-```
-
-Follow the prompts:
+## Example
 
 ```text
-Enter file path: example.txt
-Select an option: 3
-Compare with an expected hash? (y/n): y
-Enter expected hash: 2cf24dba5fb0a30e26e83b2ac5b9e29e...
+Start the tool, provide a local file, host, URL, log, or configuration sample when requested, then review the generated report.
 ```
 
-## 🖥️ Example Output
+## Learning Objectives
 
-```text
-========================================================
-hashora
-Educational file hash checker for integrity verification.
-School Purpose Only.
-========================================================
-Enter file path: example.txt
+- Understand one practical defensive security concept
+- Practice safe input handling and readable error messages
+- Learn how small security tools are structured
+- Compare language-specific approaches to files, text, networking, or system data
+- Build habits for authorized and ethical analysis only
 
-Supported hash algorithms:
-  1. MD5
-  2. SHA1
-  3. SHA256
-  4. SHA512
-  5. All algorithms
-Select an option: 3
-Calculating SHA256...
+## Security Notes
 
-File information
---------------------------------------------------------
-Name: example.txt
-Path: example.txt
-Size: 12.00 B (12 bytes)
+- Use this project only on systems, files, and data you own or have permission to inspect.
+- Do not paste real secrets into command-line arguments or screenshots.
+- Review output before sharing because paths, hostnames, and sample data may be sensitive.
+- Network-focused tools use normal platform behavior and should not be used for scanning targets without permission.
 
-Calculated hashes
---------------------------------------------------------
-SHA256 : a948904f2f0f479b8f8197694b30184b0d2ed1c1cd2a1ec0fb85d299a192a447
+## Development
 
-Compare with an expected hash? (y/n): y
-Enter expected hash: a948904f2f0f479b8f8197694b30184b0d2ed1c1cd2a1ec0fb85d299a192a447
+Run the script with Python 3.12+, keep functions small, and prefer the standard library.
 
-Comparison result
---------------------------------------------------------
-Algorithm: SHA256
-Result: MATCH
-The file hash matches the expected value.
+Suggested local checks:
+
+```bash
+# Run the project help command first.
+# Then test with a small, non-sensitive sample input.
 ```
 
-## 🧪 Educational Explanation Of File Hashes
+## Known Limitations
 
-A file hash is created by passing file contents through a hash algorithm. The output is a string of letters and numbers that acts like a fingerprint for the file.
+- Built for education and small local workflows, not enterprise monitoring.
+- Results depend on operating system permissions and available platform APIs.
+- Some projects intentionally avoid advanced features to keep the code beginner-readable.
 
-Hashes are commonly used to:
+## Disclaimer
 
-- Check whether a downloaded file was corrupted
-- Confirm that a file has not changed
-- Compare two files without reading them manually
-- Publish software checksums for users to verify
+This project is for defensive learning, school assignments, and authorized administration. It does not include malware, credential theft, brute-force attacks, exploitation, payload delivery, persistence, bypass functionality, or unauthorized access functionality.
 
-Hashes are one-way values. They are useful for integrity checking, but they are not encryption and do not hide file contents.
+## License
 
-## ⚠️ Disclaimer
-
-This project is for educational integrity verification only. It should not be treated as a complete security platform or forensic tool. Always use trusted sources when comparing expected hashes, and prefer SHA256 or SHA512 for modern integrity checks.
-
-## 📄 License
-
-This project is released under the MIT License. You may use, modify, and share it according to the license terms.
+Released under the MIT License.
